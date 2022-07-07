@@ -1,6 +1,6 @@
 import test from "../assets/images/test.png";
 
-import { FiGlobe } from "react-icons/Fi";
+import { BiGlobe } from "react-icons/bi";
 import { BsGithub } from "react-icons/bs";
 import { BsCodeSlash } from "react-icons/bs";
 
@@ -60,7 +60,7 @@ function HoverOverlay({ appUrl, githubUrl }) {
             {appUrl && (
               <button className={overlayButtonClass}>
                 <a href={appUrl} target="_blank">
-                  <FiGlobe size={28} />
+                  <BiGlobe size={28} />
                 </a>
               </button>
             )}
