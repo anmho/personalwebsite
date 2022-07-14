@@ -21,7 +21,7 @@ function Projects() {
           title="Watchlist"
           image={undefined}
           technologies={["React", "Flask", "pandas", "PostgreSQL"]}
-          appUrl={"/"}
+          // appUrl={"/"}
           githubUrl={"https://github.com/anmho/watchlist"}
           description={
             "A movie recommendation app which fetches user data and recommendations from a Flask REST API using collaborative filtering."
@@ -31,10 +31,10 @@ function Projects() {
           title="MySteamStats"
           technologies={["React", "Flask", "Recharts.js", "MaterialUI"]}
           image={steamStatsImage}
-          appUrl={"https://inspiring-youtiao-2dfdd7.netlify.app/"}
+          appUrl={"https://mysteamstats.netlify.app/"}
           githubUrl={"https://github.com/anmho/personalwebsite"}
           description={
-            "Steam play time analytics app. Built server which utilizes Steam Web API to handle user logins and serve play time data"
+            "A Steam play time analytics app built with a server which utilizes Steam Web API to handle user logins and serve play time data"
           }
         />
 
@@ -57,6 +57,20 @@ function Projects() {
           description={"Steam play time analytics app."}
           placeholderIcon={undefined}
         />
+        {/* <ProjectCard
+          title="Recipe Android App"
+          technologies={["Javascript", "HTML", "CSS"]}
+          appUrl={"https://devpost.com/software/simdemic"}
+          description={"Steam play time analytics app."}
+          placeholderIcon={undefined}
+        />
+        <ProjectCard
+          title="Twitter Clone"
+          technologies={["Javascript", "HTML", "CSS"]}
+          appUrl={"https://devpost.com/software/simdemic"}
+          description={"Steam play time analytics app."}
+          placeholderIcon={undefined}
+        /> */}
       </div>
     </section>
   );
