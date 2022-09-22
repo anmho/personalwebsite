@@ -4,10 +4,7 @@ import steamStatsImage from "../assets/images/mysteamstats.png";
 import currentlyPlayingImage from "../assets/images/currentlyplaying.png";
 function Projects() {
   return (
-    <section
-      id="projects"
-      className="h-max flex flex-col sm:px-20 sm:pt-20 px-5 pt-5"
-    >
+    <section id="projects" className="h-max flex flex-col">
       <h1 className="text-5xl m-5">Projects</h1>
       <div className="grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-5 items-center">
         <ProjectCard
