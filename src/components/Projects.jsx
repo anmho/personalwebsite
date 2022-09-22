@@ -4,9 +4,12 @@ import steamStatsImage from "../assets/images/mysteamstats.png";
 import currentlyPlayingImage from "../assets/images/currentlyplaying.png";
 function Projects() {
   return (
-    <section id="projects" className="h-max flex flex-col px-20 pt-20">
+    <section
+      id="projects"
+      className="h-max flex flex-col sm:px-20 sm:pt-20 px-5 pt-5"
+    >
       <h1 className="text-5xl m-5">Projects</h1>
-      <div className="grid grid-cols-3 gap-5 items-center">
+      <div className="grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-5 items-center">
         <ProjectCard
           title="This Website"
           image={personalWebsiteImage}
@@ -24,7 +27,7 @@ function Projects() {
           // appUrl={"/"}
           githubUrl={"https://github.com/anmho/watchlist"}
           description={
-            "A movie recommendation app which fetches user data and recommendations from a Flask REST API using collaborative filtering."
+            "A movie recommendation app. Utilizes a custom Flask REST API with collaborative filtering."
           }
         />
         <ProjectCard
@@ -33,9 +36,7 @@ function Projects() {
           image={steamStatsImage}
           appUrl={"https://mysteamstats.netlify.app/"}
           githubUrl={"https://github.com/anmho/personalwebsite"}
-          description={
-            "A Steam play time analytics app built with a server which utilizes Steam Web API to handle user logins and serve play time data"
-          }
+          description={"A Steam play time analytics app."}
         />
 
         <ProjectCard
@@ -48,29 +49,15 @@ function Projects() {
           githubUrl={
             "https://github.com/Snap-Engineering-Academy-2022/classwebsite/tree/main/andy"
           }
-          description={"Web page displaying some of my favorite music albums"}
+          description={"A web page displaying some of my favorite albums"}
         />
         <ProjectCard
           title="Simdemic"
           technologies={["Javascript", "HTML", "CSS"]}
           appUrl={"https://devpost.com/software/simdemic"}
-          description={"Steam play time analytics app."}
+          description={"Pandemic simulator app."}
           placeholderIcon={undefined}
         />
-        {/* <ProjectCard
-          title="Recipe Android App"
-          technologies={["Javascript", "HTML", "CSS"]}
-          appUrl={"https://devpost.com/software/simdemic"}
-          description={"Steam play time analytics app."}
-          placeholderIcon={undefined}
-        />
-        <ProjectCard
-          title="Twitter Clone"
-          technologies={["Javascript", "HTML", "CSS"]}
-          appUrl={"https://devpost.com/software/simdemic"}
-          description={"Steam play time analytics app."}
-          placeholderIcon={undefined}
-        /> */}
       </div>
     </section>
   );

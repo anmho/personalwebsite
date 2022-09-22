@@ -8,7 +8,7 @@ function ProjectCard({
   title = "Test",
   // image = test,
   image,
-  technologies = ["Python", "Flask", "Pandas"],
+  technologies,
   appUrl,
   githubUrl,
   description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam commodo nisl odio, in ultrices metus sollicitudin porta. ",
@@ -30,7 +30,7 @@ function ProjectCard({
         )}
         <div className="grow flex flex-col items-center justify-center">
           <h3 className="text-3xl pt-1 pb-1">{title}</h3>
-          <div className="flex flex-row">
+          <div className="flex flex-row flex-wrap">
             {technologies.map((tech) => (
               <p className="bg-blue-500 px-2 pt-1 pb-1 text-white rounded-md m-1">
                 {tech}

@@ -15,10 +15,14 @@ function App() {
         className="h-screen flex flex-col items-center justify-center"
       >
         <Navbar />
-        <h1 className="text-9xl">Hi, I'm Andy.</h1>
-        <h5 className="text-3xl mt-4">
-          A college student with a passion for software engineering.
-        </h5>
+        <h3 className="md:text-2xl text-2xl">Hi, I'm</h3>
+        <h1 className="md:text-9xl text-7xl">Andy Ho.</h1>
+        <div className="md:w-1/2 w-3/4 px-2">
+          <h5 className="md:text-2xl mt-4 text-md">
+            A computer science student at University of California, Irvine with
+            a passion for software engineering.
+          </h5>
+        </div>
 
         <div className="flex flex-col items-center absolute bottom-0 mb-10">
           <h3 className="text-3xl">Projects</h3>
@@ -31,9 +35,7 @@ function App() {
         </div>
       </section>
       <Projects />
-
-      <About />
-
+      {/* <About /> */}
       <Contact />
     </div>
   );
