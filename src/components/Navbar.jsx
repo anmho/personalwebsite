@@ -1,6 +1,12 @@
-function Navbar() {
+import { useState, useRef, useEffect } from "react";
+
+function Navbar({ isScrolled }) {
   return (
-    <div className="bg-white flex justify-between items-center fixed top-0 left-0 w-screen p-5 px-20 z-50">
+    <div
+      className={`transition-shadow duration-500 bg-white ${
+        isScrolled ? "shadow-md" : ""
+      } flex justify-between items-center fixed top-0 left-0 w-full p-5 px-20 z-50`}
+    >
       <span className="text-3xl">
         <a href="#home">AH</a>
       </span>

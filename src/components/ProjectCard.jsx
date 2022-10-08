@@ -14,7 +14,6 @@ function ProjectCard({
   description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam commodo nisl odio, in ultrices metus sollicitudin porta. ",
   placeholderIcon,
 }) {
-  console.log(test);
   return (
     <div>
       <HoverOverlay appUrl={appUrl} githubUrl={githubUrl} />
