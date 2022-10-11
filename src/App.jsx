@@ -31,6 +31,7 @@ function App() {
           <Navbar isScrolled={isScrolled} />
           <Hero />
           <Projects />
+          <About />
           <Contact />
         </div>
       </div>

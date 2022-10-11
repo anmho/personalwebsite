@@ -16,7 +16,7 @@ function About() {
         // ref={resumeContainerRef}
         className="flex flex-row w-full items-center justify-evenly px-20"
       >
-        <div className="text-2xl p-5 w-[30%] rounded-xl shadow-lg">
+        {/* <div className="text-2xl p-5 w-[30%] rounded-xl shadow-lg">
           <p className="m-4">
             I am currently studying Computer Science and Statistics at the
             University of California, Irvine.
@@ -27,7 +27,7 @@ function About() {
               frontend {"&"} backend web development, and machine learning.
             </p>
           </div>
-        </div>
+        </div> */}
         <Resume parent={resumeContainerRef} />
       </div>
     </section>
