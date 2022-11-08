@@ -11,24 +11,16 @@ function ProjectCard({
   technologies,
   appUrl,
   githubUrl,
-  description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam commodo nisl odio, in ultrices metus sollicitudin porta. ",
+  description,
   placeholderIcon,
 }) {
   return (
     <div>
       <HoverOverlay appUrl={appUrl} githubUrl={githubUrl} />
       <div className="col-span-1 flex flex-col aspect-square bg-white rounded-lg bg shadow-md p-6 items-center justify-center">
-        {image ? (
-          <img src={image} className="aspect-video object-cover rounded-lg" />
-        ) : (
-          <div className="w-full aspect-video flex flex-col bg-gray h-100 justify-center items-center">
-            <span className="bg-blue-500 rounded-full w-max p-2 flex flex-col justify-center items-center text-white">
-              {placeholderIcon ? placeholderIcon : <BsCodeSlash size={40} />}
-            </span>
-          </div>
-        )}
+        <ProjectImage image={image} placeholderIcon={placeholderIcon} />
         <div className="grow flex flex-col items-center justify-center">
-          <h3 className="text-3xl pt-1 pb-1">{title}</h3>
+          <h3 className="text-3xl py-1">{title}</h3>
           <div className="flex flex-row flex-wrap">
             {technologies.map((tech) => (
               <p className="bg-blue-500 px-2 pt-1 pb-1 text-white rounded-md m-1">
@@ -43,7 +35,17 @@ function ProjectCard({
   );
 }
 
-function HoverButton() {}
+function ProjectImage({ image, placeholderIcon }) {
+  return image ? (
+    <img src={image} className="aspect-video object-cover rounded-lg" />
+  ) : (
+    <div className="w-full aspect-video flex flex-col bg-gray h-100 justify-center items-center">
+      <span className="bg-blue-500 rounded-full w-max p-2 flex flex-col justify-center items-center text-white">
+        {placeholderIcon ? placeholderIcon : <BsCodeSlash size={40} />}
+      </span>
+    </div>
+  );
+}
 
 function HoverOverlay({ appUrl, githubUrl }) {
   const overlayClass =

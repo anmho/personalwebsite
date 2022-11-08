@@ -20,7 +20,7 @@ function Contact() {
           <FaLinkedinIn size={28} />
         </a>
         <a
-          href="andyminhtuanho@gmail.com"
+          href="mailto:andyminhtuanho@gmail.com"
           className="m-2 p-2 rounded-full bg-blue-500 text-white transition-all duration-200 hover:text-black"
         >
           <HiOutlineMail size={28} />

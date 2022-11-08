@@ -5,7 +5,7 @@ function Resume({ parent }) {
   const [width, setWidth] = useState();
 
   return (
-    <div className="shadow-xl hover:shadow-2xl w-max hover:cursor-pointer transition-all duration-300 hover:-translate-y-3">
+    <div className="shadow-xl hover:shadow-2xl w-max hover:cursor-pointer transition-all duration-300 hover:-translate-y-3 p-1">
       <a href="https://github.com/anmho/resume/raw/main/main.pdf">
         <Document
           file="https://personalwebsiteserver.herokuapp.com/"
