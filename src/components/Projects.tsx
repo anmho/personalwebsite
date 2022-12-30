@@ -1,67 +1,32 @@
-import ProjectCard from "./ProjectCard";
+import ProjectCard, { ProjectProps } from "./ProjectCard";
 import personalWebsiteImage from "../assets/images/personalwebsite.png";
 import steamStatsImage from "../assets/images/mysteamstats.png";
 import currentlyPlayingImage from "../assets/images/currentlyplaying.png";
+import SectionContainer from "./SectionContainer";
 
+// const projects: ProjectProps[] =
 
-const projects = [
-  {},
-]
+interface ProjectsProps {
+  projects: ProjectProps[];
+}
 
-function Projects() {
+function Projects({ projects }: ProjectsProps) {
   return (
-    <section id="projects" className="h-max flex flex-col pt-20">
-      <div className="grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-5 items-center">
-        <ProjectCard
-          title="This Website"
-          image={personalWebsiteImage}
-          technologies={["React", "TailwindCSS", "Flask"]}
-          appUrl={"/"}
-          githubUrl={"https://github.com/anmho/personalwebsite"}
-          description={
-            "My personal website to display my current and past projects."
-          }
-        />
-        <ProjectCard
-          title="Watchlist"
-          image={undefined}
-          technologies={["React", "Flask", "pandas", "PostgreSQL"]}
-          // appUrl={"/"}
-          githubUrl={"https://github.com/anmho/watchlist"}
-          description={
-            "A movie recommendation app. Utilizes a custom Flask REST API with collaborative filtering."
-          }
-        />
-        <ProjectCard
-          title="MySteamStats"
-          technologies={["React", "Flask", "Recharts.js", "MaterialUI"]}
-          image={steamStatsImage}
-          appUrl={"https://mysteamstats.netlify.app/"}
-          githubUrl={"https://github.com/anmho/personalwebsite"}
-          description={"A Steam play time analytics app."}
-        />
-
-        <ProjectCard
-          title="NowPlaying"
-          technologies={["Javascript", "HTML", "CSS"]}
-          image={currentlyPlayingImage}
-          appUrl={
-            "https://snap-engineering-academy-2022.github.io/classwebsite/andy/"
-          }
-          githubUrl={
-            "https://github.com/Snap-Engineering-Academy-2022/classwebsite/tree/main/andy"
-          }
-          description={"A web page displaying some of my favorite albums"}
-        />
-        <ProjectCard
-          title="Simdemic"
-          technologies={["Javascript", "HTML", "CSS"]}
-          appUrl={"https://devpost.com/software/simdemic"}
-          description={"Pandemic simulator app."}
-          placeholderIcon={undefined}
-        />
+    <SectionContainer id="projects">
+      <div className="flex flex-col w-full sm:max-w-[50%]">
+        <h1 className="text-5xl mb-4">My Projects</h1>
+        {projects.map((p) => (
+          <ProjectCard
+            title={p.title}
+            year={p.year}
+            desc={p.desc}
+            skills={p.skills}
+            repoUrl={p.repoUrl}
+            websiteUrl={p.websiteUrl}
+          />
+        ))}
       </div>
-    </section>
+    </SectionContainer>
   );
 }
 

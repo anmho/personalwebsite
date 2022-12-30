@@ -1,22 +1,20 @@
 import Projects from "./Projects";
 import { useState } from "react";
-import ToggleSwitch from "./ToggleSwitch";
+import ToggleSwitch, { Sections } from "./ToggleSwitch";
+import Experience from "./Experience";
+
 function Body() {
-  const [focused, setFocused] = useState("projects"); // typescript
+  const [focused, setFocused] = useState(Sections.Projects); // typescript
+  console.log(focused);
 
   return (
-    <>
-      <ToggleSwitch
-        focused={focused}
-        setFocused={setFocused}
-        labels={["Projects", "Experience"]}
-      />
-      <Projects />
+    <section id="body">
+      <ToggleSwitch focused={focused} setFocused={setFocused} />
       <div>
-        {focused === "projects" && <Projects />}
-        {focused === "experience" && <Projects />}
+        {focused === Sections.Projects && <Projects />}
+        {focused === Sections.Experience && <Experience />}
       </div>
-    </>
+    </section>
   );
 }
 

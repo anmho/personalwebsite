@@ -1,11 +1,16 @@
 import { motion } from "framer-motion";
 
-function ToggleSwitch({ focused, setFocused, labels }) {
-  const left =
-    "bg-blue-500 shadow-md w-[46%] h-[84%] rounded-full absolute top-[8%] left-[2%] transition-all";
-  const right =
-    "bg-blue-500 shadow-md w-[46%] h-[84%] rounded-full absolute top-[8%] left-[52%] transition-all";
+export enum Sections {
+  Projects,
+  Experience,
+}
 
+interface ToggleSwitchProps {
+  focused: Sections;
+  setFocused: React.Dispatch<React.SetStateAction<Sections>>;
+}
+
+function ToggleSwitch({ focused, setFocused }: ToggleSwitchProps) {
   return (
     <div className="w-full flex items-center justify-center cursor-pointer">
       <div
@@ -13,39 +18,65 @@ function ToggleSwitch({ focused, setFocused, labels }) {
       >
         {/* Labels */}
         <div className="flex w-full h-full items-center justify-center">
-          <button
+          <ToggleSection
+            section={Sections.Projects}
+            focused={focused}
+            setFocused={setFocused}
+          />
+          {/* <button
             className={`text-center ${
-              focused === labels[0] ? "text-white" : "text-black"
+              focused === Sections.Experience ? "text-white" : "text-black"
             } rounded-full w-1/2 z-50 h-full transition-colors duration-300`}
-            onClick={() => setFocused(labels[0])}
-          >
-            <h3>Projects</h3>
-          </button>
-          <button
-            className={`text-center ${
-              focused === labels[1] ? "text-white" : "text-black"
-            } rounded-full w-1/2 z-50 h-full transition-colors duration-300`}
-            onClick={() => setFocused(labels[1])}
+            onClick={() => setFocused(Sections.Experience)}
           >
             <h3>Experience</h3>
-          </button>
+          </button> */}
+          <ToggleSection
+            section={Sections.Experience}
+            focused={focused}
+            setFocused={setFocused}
+          />
         </div>
 
         {/* Selection Highlight */}
-
-        {/* on hover -> span moves 2% from right side */}
-        {/* on click -> span moves 2% from right side permanently */}
-
+        {/* <Slider focused={focused} /> */}
         <span
-          className={`bg-blue-500 shadow-md w-[46%] h-[84%] rounded-full absolute top-[8%] left-[${
-            focused === 0 ? "2%" : "52%"
-          }] transition-all duration-200`}
+          className={`left-[${
+            focused === Sections.Projects ? "2%" : "52%"
+          }] bg-blue-500 shadow-md w-[46%] h-[84%] rounded-full absolute top-[8%] transition-all duration-200`}
         />
-
-        {/* use arbitrary group */}
       </div>
     </div>
   );
 }
+
+interface ToggleSectionProps {
+  section: Sections;
+  focused: Sections;
+  setFocused: React.Dispatch<React.SetStateAction<Sections>>;
+}
+
+function ToggleSection({ section, focused, setFocused }: ToggleSectionProps) {
+  return (
+    <button
+      className={`text-center ${
+        focused === section ? "text-white" : "text-black"
+      } rounded-full w-1/2 z-50 h-full transition-colors duration-300`}
+      onClick={() => setFocused(section)}
+    >
+      <h3>{Sections[section]}</h3>
+    </button>
+  );
+}
+
+interface SliderProps {
+  focused: Sections;
+}
+
+// function Slider({ focused }: SliderProps) {
+//   return (
+
+//   );
+// }
 
 export default ToggleSwitch;
