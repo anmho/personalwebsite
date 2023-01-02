@@ -6,15 +6,22 @@ import SectionContainer from "./SectionContainer";
 
 // const projects: ProjectProps[] =
 
-interface ProjectsProps {
+interface ProjectsProps extends React.ComponentPropsWithRef<"div"> {
   projects: ProjectProps[];
 }
 
-function Projects({ projects }: ProjectsProps) {
+function Projects({ projects, ...rest }: ProjectsProps) {
   return (
-    <SectionContainer id="projects">
+    <SectionContainer id="projects" {...rest}>
       <div className="flex flex-col w-full sm:max-w-[50%]">
-        <h1 className="text-5xl mb-4">My Projects</h1>
+        <h1
+          className="text-6xl -tracking-wider p-4 font-semibold
+            bg-gradient-to-r bg-clip-text text-transparent 
+            from-blue-500 via-purple-500 to-blue-500
+            animate-text mb-2"
+        >
+          My Projects
+        </h1>
         {projects.map((p) => (
           <ProjectCard
             title={p.title}

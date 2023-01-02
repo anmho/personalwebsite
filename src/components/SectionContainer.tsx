@@ -1,4 +1,4 @@
-interface SectionContainerProps extends React.ComponentPropsWithoutRef<"div"> {
+interface SectionContainerProps extends React.ComponentPropsWithRef<"div"> {
   children?: React.ReactNode;
   className?: string;
 }
