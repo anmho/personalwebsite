@@ -1,0 +1,45 @@
+[
+  {
+    "title": "Pong Online",
+    "year": "2022",
+    "desc": "An online multi-player pong game.",
+    "skills": ["React", "TypeScript", "Flask", "Socket.IO"],
+    "repoUrl": "",
+    "websiteUrl": ""
+  },
+
+  {
+    "title": "Portfolio",
+    "year": "2022",
+    "desc": "My portfolio website built to showcase my projects, experiences, and skills.",
+    "skills": ["React", "TypeScript", "TailwindCSS", "Sanity.io, Flask"],
+    "repoUrl": "",
+    "websiteUrl": ""
+  },
+
+  {
+    "title": "Watchlist",
+    "year": "2022",
+    "desc": "A full-stack movie recommendation app. I trained a collaborative filtering machine learning model to generate recommendations using cosine similarity and matrix factorization. A Flask REST API hosted on Ubuntu serves the model recommendations to a React client.",
+    "skills": [
+      "Python",
+      "Flask",
+      "React",
+      "TypeScript",
+      "Postgres",
+      "numpy",
+      "Colab"
+    ],
+    "repoUrl": "",
+    "websiteUrl": ""
+  },
+
+  {
+    "title": "Hello",
+    "year": "2022",
+    "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+    "skills": ["a", "b", "c"],
+    "repoUrl": "",
+    "websiteUrl": ""
+  }
+]
