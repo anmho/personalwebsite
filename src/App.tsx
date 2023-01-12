@@ -1,36 +1,20 @@
 import Navbar from "./components/Navbar";
-import About from "./components/About";
 import Projects from "./components/Projects";
 // @ts-ignore
 
 import { pdfjs } from "react-pdf";
 import Hero from "./components/Hero";
-import Body from "./components/Body";
-import Footer from "./components/Footer";
 import Skills from "./components/Skills";
 import Contact from "./components/Contact";
 import { useState, useEffect, useRef } from "react";
 import projects from "./assets/static/json/projects.json";
 import { motion, useScroll } from "framer-motion";
-// import { Sections } from "./components/ToggleSwitch";
 import Sections from "./models/section";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
 
 function App() {
   const [scrollYProgress, setScrollYProgress] = useState(Number);
-  // const [focused, setFocused] = useState(Sections.Home);
-
-  // const homeRef = useRef()
-
-  const projectsRef = useRef<HTMLDivElement>(null);
-  const skillsRef = useRef<HTMLDivElement>(null);
-  const experienceRef = useRef<HTMLDivElement>(null);
-  const sectionRefs = [
-    projectsRef,
-    skillsRef,
-    // experienceRef,
-  ];
 
   const handleScroll = () => {
     setScrollYProgress(window.scrollY);
@@ -45,15 +29,7 @@ function App() {
     };
   }, []);
 
-  // use effect on viewport change and
-
   const [move, setMove] = useState(false);
-
-  // console.log(
-  //   Sections[focused],
-  //   projectsRef.current?.offsetLeft,
-  //   projectsRef.current?.offsetHeight
-  // );
 
   return (
     <main className="w-full overflow-hidden scroll-pt-36 snap-y">
