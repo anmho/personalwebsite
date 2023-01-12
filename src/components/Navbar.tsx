@@ -10,8 +10,9 @@ function Navbar({ scrollYProgress }: NavbarProps) {
   const expanded = scrollYProgress > window.innerHeight * 0.8;
   return (
     <>
-      <ExpandedNavbar expanded={expanded} />
+      {/* <ExpandedNavbar expanded={expanded} /> */}
       {/* <MiniNavbar expanded={expanded} /> */}
+      <BasicNav scrollYProgress={scrollYProgress} />
     </>
   );
 }
@@ -143,60 +144,60 @@ function MiniNavbar({ expanded }: MiniNavbarProps) {
   }
 }
 
-export default Navbar;
-
-// interface NavbarProps {
-//   scrollYProgress: number;
-// }
-
-// function Navbar({ scrollYProgress }: NavbarProps) {
-//   return (
-//     <div
-//       className={`transition-all duration-300 ${
-//         scrollYProgress > window.innerHeight / 2 ? "bg-white" : ""
-//       } flex justify-center items-center fixed top-0 left-0 w-full p-5 px-20 z-50 flex-row `}
-//     >
-//       <div className="flex justify-between items-center xl:max-w-[1440px] w-full">
-//         <span className="text-xl flex justify-center align-center">
-//           <a href="#home" className="-tracking-wide">
-//             Andrew Ho
-//           </a>
-//         </span>
-//         <ul className="flex flex-row justify-center align-center">
-//           <NavItem title="Projects" href="#projects" />
-//           <NavItem title="About" href="#about" />
-//           <NavItem title="Skills" href="#skills" />
-
-//           {/* <NavItem title="Contact" href="#contact" /> */}
-//         </ul>
-//         <a href="#contact">
-//           <div
-//             className={`h-full p-2 px-4 rounded-full drop-shadow-md transition-all ${
-//               scrollYProgress > window.innerHeight / 2
-//                 ? "shadow-md bg-sky-500 text-white"
-//                 : "bg-white text-black"
-//             }`}
-//           >
-//             Contact
-//           </div>
-//         </a>
-//       </div>
-//     </div>
-//   );
-// }
-
-// interface NavItemProps {
-//   title: string;
-//   href: string;
-// }
-
-// function NavItem({ title, href }: NavItemProps) {
-//   return (
-//     <li className="mx-2 text-lg relative group px-2">
-//       <a href={href}>{title}</a>
-//       <span className="bg-black w-0 group-hover:w-full group-hover:right-0 h-0.5 absolute left-0 bottom-0 transition-all" />
-//     </li>
-//   );
-// }
-
 // export default Navbar;
+
+interface BasicNavProps {
+  scrollYProgress: number;
+}
+
+function BasicNav({ scrollYProgress }: BasicNavProps) {
+  return (
+    <div
+      className={`transition-all duration-300 ${
+        scrollYProgress > window.innerHeight / 2 ? "bg-white" : ""
+      } flex justify-center items-center fixed top-0 left-0 w-full p-5 px-20 z-50 flex-row `}
+    >
+      <div className="flex justify-between items-center xl:max-w-[1440px] w-full">
+        <span className="text-xl flex justify-center align-center">
+          <a href="#home" className="-tracking-wide">
+            Andrew Ho
+          </a>
+        </span>
+        <ul className="flex flex-row justify-center align-center">
+          <NavItem title="Projects" href="#projects" />
+          <NavItem title="About" href="#about" />
+          <NavItem title="Skills" href="#skills" />
+
+          {/* <NavItem title="Contact" href="#contact" /> */}
+        </ul>
+        <a href="#contact">
+          <div
+            className={`h-full p-2 px-4 rounded-full drop-shadow-md transition-all ${
+              scrollYProgress > window.innerHeight / 2
+                ? "shadow-md bg-sky-500 text-white"
+                : "bg-white text-black"
+            }`}
+          >
+            Contact
+          </div>
+        </a>
+      </div>
+    </div>
+  );
+}
+
+interface NavItemProps {
+  title: string;
+  href: string;
+}
+
+function NavItem({ title, href }: NavItemProps) {
+  return (
+    <li className="mx-2 text-lg relative group px-2">
+      <a href={href}>{title}</a>
+      <span className="bg-black w-0 group-hover:w-full group-hover:right-0 h-0.5 absolute left-0 bottom-0 transition-all" />
+    </li>
+  );
+}
+
+export default Navbar;

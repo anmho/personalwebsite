@@ -5,7 +5,8 @@
     "desc": "An online multi-player pong game.",
     "skills": ["React", "TypeScript", "Flask", "Socket.IO"],
     "repoUrl": "",
-    "websiteUrl": ""
+    "websiteUrl": "",
+    "imageUrl": ""
   },
 
   {
@@ -14,7 +15,8 @@
     "desc": "My portfolio website built to showcase my projects, experiences, and skills.",
     "skills": ["React", "TypeScript", "TailwindCSS", "Sanity.io, Flask"],
     "repoUrl": "",
-    "websiteUrl": ""
+    "websiteUrl": "",
+    "imageUrl": ""
   },
 
   {
@@ -31,7 +33,8 @@
       "Colab"
     ],
     "repoUrl": "",
-    "websiteUrl": ""
+    "websiteUrl": "",
+    "imageUrl": ""
   },
 
   {
@@ -40,6 +43,7 @@
     "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
     "skills": ["a", "b", "c"],
     "repoUrl": "",
-    "websiteUrl": ""
+    "websiteUrl": "",
+    "imageUrl": ""
   }
 ]

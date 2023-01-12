@@ -2,11 +2,14 @@
 import Resume from "./Resume";
 import SectionContainer from "./SectionContainer";
 import { FiExternalLink } from "react-icons/fi";
+import { BsGithub } from "react-icons/bs";
+import { BsLinkedin } from "react-icons/bs";
+import { SiGmail } from "react-icons/si";
 
 function Contact() {
   return (
-    <SectionContainer id="contact" className="h-48 mt-64">
-      {/* <div className="w-full flex flex-col align-center">
+    <SectionContainer id="contact" className="h-48 mt-64 mb-32">
+      <div className="w-full flex flex-col align-center">
         <div className="flex-row flex justify-center align-center w-full h-12">
           <div className="flex-row flex justify-between align-center bg-white w-3/4 h-fit p-4 rounded-md drop-shadow-xl">
             <div className="flex flex-col justify-center align-center">
@@ -34,7 +37,7 @@ function Contact() {
 
               <div className="flex flex-row align-center justify-evenly">
                 <button className="flex-grow mx-2 my-4 rounded-md outline-gray-300 outline p-2">
-                  A
+                  <BsGithub size={20} />
                 </button>
                 <button className="flex-grow mx-2 my-4 rounded-md outline-gray-300 outline p-2">
                   B
@@ -46,7 +49,7 @@ function Contact() {
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
     </SectionContainer>
   );
 }

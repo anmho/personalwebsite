@@ -13,7 +13,7 @@ interface ProjectsProps extends React.ComponentPropsWithRef<"div"> {
 function Projects({ projects, ...rest }: ProjectsProps) {
   return (
     <SectionContainer id="projects" {...rest}>
-      <div className="flex flex-col w-full sm:max-w-[50%]">
+      <div className="flex flex-col w-full">
         <h1
           className="text-6xl -tracking-wider p-4 font-semibold
             bg-gradient-to-r bg-clip-text text-transparent 
@@ -22,14 +22,17 @@ function Projects({ projects, ...rest }: ProjectsProps) {
         >
           My Projects
         </h1>
-        {projects.map((p) => (
+        {projects.map((p, i) => (
           <ProjectCard
-            title={p.title}
-            year={p.year}
-            desc={p.desc}
-            skills={p.skills}
-            repoUrl={p.repoUrl}
-            websiteUrl={p.websiteUrl}
+            key={i}
+            project={p}
+            direction={i % 2 == 1 ? "reversed" : ""}
+            // title={p.title}
+            // year={p.year}
+            // desc={p.desc}
+            // skills={p.skills}
+            // repoUrl={p.repoUrl}
+            // websiteUrl={p.websiteUrl}
           />
         ))}
       </div>
