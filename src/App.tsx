@@ -29,8 +29,6 @@ function App() {
     };
   }, []);
 
-  const [move, setMove] = useState(false);
-
   return (
     <main className="w-full overflow-hidden scroll-pt-36 snap-y">
       <div className="flex justify-center align-center flex-row">

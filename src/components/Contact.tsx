@@ -7,6 +7,10 @@ import { BsLinkedin } from "react-icons/bs";
 import { SiGmail } from "react-icons/si";
 
 function Contact() {
+  const githubUrl = "github.com/anmho";
+  const linkedinUrl = "linkedin.com/in/andrewmnho";
+  const gmail = "andyminhtuanho@gmail.com";
+
   return (
     <SectionContainer id="contact" className="h-48 mt-64 mb-32">
       <div className="w-full flex flex-col align-center">
@@ -24,7 +28,10 @@ function Contact() {
             </div>
 
             <div className="flex flex-col justify-center align-center w-fit">
-              <button>
+              <a
+                href={"https://github.com/anmho/resume/blob/main/main.pdf"}
+                target="_blank"
+              >
                 <div className="flex flex-col justify-center align-center w-64 bg-gray-100 p-4 rounded-lg">
                   <div className="flex-row align-center justify-center flex">
                     <h3 className="mr-2">My Resume</h3>
@@ -33,18 +40,30 @@ function Contact() {
                     </span>
                   </div>
                 </div>
-              </button>
+              </a>
 
               <div className="flex flex-row align-center justify-evenly">
-                <button className="flex-grow mx-2 my-4 rounded-md outline-gray-300 outline p-2">
+                <a
+                  href={githubUrl}
+                  className="flex-grow mx-2 my-4 rounded-md outline-gray-300 outline p-2 align-center justify-center flex"
+                  target="_blank"
+                >
                   <BsGithub size={20} />
-                </button>
-                <button className="flex-grow mx-2 my-4 rounded-md outline-gray-300 outline p-2">
-                  B
-                </button>
-                <button className="flex-grow mx-2 my-4 rounded-md outline-gray-300 outline p-2">
-                  C
-                </button>
+                </a>
+                <a
+                  href={linkedinUrl}
+                  className="flex-grow mx-2 my-4 rounded-md outline-gray-300 outline p-2  align-center justify-center flex"
+                  target="_blank"
+                >
+                  <BsLinkedin size={20} />
+                </a>
+                <a
+                  href={gmail}
+                  className="flex-grow mx-2 my-4 rounded-md outline-gray-300 outline p-2  align-center justify-center flex"
+                  target="_blank"
+                >
+                  <SiGmail size={20} />
+                </a>
               </div>
             </div>
           </div>
