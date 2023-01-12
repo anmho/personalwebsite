@@ -6,149 +6,151 @@ interface NavbarProps {
   scrollYProgress: number;
 }
 
-// function Navbar({ scrollYProgress }: NavbarProps) {
-//   const expanded = scrollYProgress > window.innerHeight * 0.8;
-//   return (
-//     <>
-//       <ExpandedNavbar expanded={expanded} />
-//       <MiniNavbar expanded={expanded} />
-//     </>
-//   );
-// }
+function Navbar({ scrollYProgress }: NavbarProps) {
+  const expanded = scrollYProgress > window.innerHeight * 0.8;
+  return (
+    <>
+      {/* <ExpandedNavbar expanded={expanded} /> */}
+      {/* <MiniNavbar expanded={expanded} /> */}
+      <BasicNav scrollYProgress={scrollYProgress} />
+    </>
+  );
+}
 
-// interface ExpandedNavbarProps {
-//   expanded: boolean;
-// }
+interface ExpandedNavbarProps {
+  expanded: boolean;
+}
 
-// function ExpandedNavbar({ expanded }: ExpandedNavbarProps) {
-//   return (
-//     <motion.div
-//       animate={{
-//         x: expanded ? "100%" : "0%",
-//       }}
-//       className="bg-white hidden w-[20vw] h-screen top-0 right-0 drop-shadow-xl lg:flex flex-col py-10 px-20 min-w-max z-[99] fixed"
-//     >
-//       <ExpandedNavItem title={"Projects"} sectionId={"projects"} />
-//       <ExpandedNavItem title={"Experience"} sectionId={"experience"} />
-//       <ExpandedNavItem title={"Skills"} sectionId={"skills"} />
-//     </motion.div>
-//   );
-// }
+function ExpandedNavbar({ expanded }: ExpandedNavbarProps) {
+  return (
+    <motion.div
+      animate={{
+        x: expanded ? "100%" : "0%",
+      }}
+      className="bg-white hidden w-[20vw] h-screen top-0 right-0 drop-shadow-xl lg:flex flex-col py-10 px-20 min-w-max z-[99] fixed"
+    >
+      <ExpandedNavItem title={"Projects"} sectionId={"projects"} />
+      <ExpandedNavItem title={"Experience"} sectionId={"experience"} />
+      <ExpandedNavItem title={"Skills"} sectionId={"skills"} />
+    </motion.div>
+  );
+}
 
-// interface ExpandedNavItemProps {
-//   title: string;
-//   sectionId: string;
-// }
+interface ExpandedNavItemProps {
+  title: string;
+  sectionId: string;
+}
 
-// function ExpandedNavItem({ title, sectionId }: ExpandedNavItemProps) {
-//   return (
-//     <a className="group" href={`#${sectionId}`}>
-//       <h1 className="text-5xl -tracking-wider mb-6 hover-underline relative w-fit">
-//         {title}
-//       </h1>
-//     </a>
-//   );
-// }
+function ExpandedNavItem({ title, sectionId }: ExpandedNavItemProps) {
+  return (
+    <a className="group" href={`#${sectionId}`}>
+      <h1 className="text-5xl -tracking-wider mb-6 hover-underline relative w-fit">
+        {title}
+      </h1>
+    </a>
+  );
+}
 
-// interface MiniNavbarProps {
-//   expanded: boolean;
-// }
-// function MiniNavbar({ expanded }: MiniNavbarProps) {
-//   const [focused, setFocused] = useState(Section.Home);
+interface MiniNavbarProps {
+  expanded: boolean;
+}
+function MiniNavbar({ expanded }: MiniNavbarProps) {
+  const [focused, setFocused] = useState(Section.Home);
 
-//   const constraintsRef = useRef<HTMLDivElement>(null);
-//   console.log(Object.keys(Section).length / 2);
+  const constraintsRef = useRef<HTMLDivElement>(null);
+  console.log(Object.keys(Section).length / 2);
 
-//   return (
-//     <motion.div
-//       animate={{
-//         x: !expanded ? "100%" : "0%",
-//       }}
-//       className="flex flex-col justify-center align-center right-0 fixed z-[100] rounded-full pr-5 h-screen "
-//     >
-//       <div
-//         className="bg-red-500 rounded-full drop-shadow-lg bg-opacity-50 w-12 flex flex-col justify-center align-center"
-//         ref={constraintsRef}
-//       >
-//         <MiniNavItem
-//           setFocused={setFocused}
-//           section={Section.Home}
-//           sectionLabel={"home"}
-//         />
-//         <MiniNavItem
-//           setFocused={setFocused}
-//           section={Section.Projects}
-//           sectionLabel={"projects"}
-//         />
-//         <MiniNavItem
-//           setFocused={setFocused}
-//           section={Section.Skills}
-//           sectionLabel={"skills"}
-//         />
-//         <MiniNavItem
-//           setFocused={setFocused}
-//           section={Section.Experience}
-//           sectionLabel={"experience"}
-//         />
+  return (
+    // <div className="bg-red-500 w-screen h-5 "></div>
+    <motion.div
+      animate={{
+        x: !expanded ? "100%" : "0%",
+      }}
+      className="flex flex-col justify-center align-center top-0 right-0 fixed z-[112] rounded-full pr-5 h-screen "
+    >
+      <div
+        className="bg-red-500 rounded-full drop-shadow-lg bg-opacity-50 w-12 flex flex-col justify-center align-center"
+        ref={constraintsRef}
+      >
+        <MiniNavItem
+          setFocused={setFocused}
+          section={Section.Home}
+          sectionLabel={"home"}
+        />
+        <MiniNavItem
+          setFocused={setFocused}
+          section={Section.Projects}
+          sectionLabel={"projects"}
+        />
+        <MiniNavItem
+          setFocused={setFocused}
+          section={Section.Skills}
+          sectionLabel={"skills"}
+        />
+        <MiniNavItem
+          setFocused={setFocused}
+          section={Section.Experience}
+          sectionLabel={"experience"}
+        />
 
-//         <motion.div
-//           className=" w-full aspect-square rounded-full p-1 z-[111] absolute top-0 left-0"
-//           // animate={}
-//           // onDragEnd={(e, info) =>
-//           //   console.log(info.offset.x, info.offset.y, info.)
-//           // }
-//           // dragConstraints={constraintsRef}
-//           animate={{
-//             top:
-//               String(focused * (100 / (Object.keys(Section).length / 2))) + "%",
-//           }}
-//           // drag="y"
-//         >
-//           <div
-//             className="bg-red-500 aspect-square rounded-full z-[111]"
-//             // animate={}
-//             // onDragEnd={(e, info) =>
-//             //   console.log(info.offset.x, info.offset.y, info.)
-//             // }
-//             // onClick={() => setFocused((focused) => focused + 1)}
-//           ></div>
-//         </motion.div>
-//       </div>
-//     </motion.div>
-//   );
+        <motion.div
+          className=" w-full aspect-square rounded-full p-1 z-[111] absolute top-0 left-0"
+          // animate={}
+          // onDragEnd={(e, info) =>
+          //   console.log(info.offset.x, info.offset.y, info.)
+          // }
+          dragConstraints={constraintsRef}
+          animate={{
+            top:
+              String(focused * (100 / (Object.keys(Section).length / 2))) + "%",
+          }}
+          drag="y"
+        >
+          <div
+            className="bg-red-500 aspect-square rounded-full z-[111]"
+            // animate={}
+            // onDragEnd={(e, info) =>
+            //   console.log(info.offset.x, info.offset.y, info.)
+            // }
+            // onClick={() => setFocused((focused) => focused + 1)}
+          ></div>
+        </motion.div>
+      </div>
+    </motion.div>
+  );
 
-//   interface MiniNavItemProps {
-//     setFocused: React.Dispatch<React.SetStateAction<Section>>;
-//     section: Section;
-//     sectionLabel: string;
-//   }
+  interface MiniNavItemProps {
+    setFocused: React.Dispatch<React.SetStateAction<Section>>;
+    section: Section;
+    sectionLabel: string;
+  }
 
-//   function MiniNavItem({
-//     setFocused,
-//     section,
-//     sectionLabel,
-//   }: MiniNavItemProps) {
-//     return (
-//       <a
-//         href={`#${sectionLabel}`}
-//         className="w-full aspect-square rounded-full opacity-80 p-1"
-//         onClick={() => setFocused(section)}
-//       >
-//         <div className="w-full aspect-square bg-gray-500  rounded-full">
-//           {/* <p>hello</p> */}
-//         </div>
-//       </a>
-//     );
-//   }
-// }
+  function MiniNavItem({
+    setFocused,
+    section,
+    sectionLabel,
+  }: MiniNavItemProps) {
+    return (
+      <a
+        href={`#${sectionLabel}`}
+        className="w-full aspect-square rounded-full opacity-80 p-1"
+        onClick={() => setFocused(section)}
+      >
+        <div className="w-full aspect-square bg-gray-500  rounded-full">
+          <p>hello</p>
+        </div>
+      </a>
+    );
+  }
+}
 
 // export default Navbar;
 
-interface NavbarProps {
+interface BasicNavProps {
   scrollYProgress: number;
 }
 
-function Navbar({ scrollYProgress }: NavbarProps) {
+function BasicNav({ scrollYProgress }: BasicNavProps) {
   return (
     <div
       className={`transition-all duration-300 ${
