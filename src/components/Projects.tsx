@@ -3,11 +3,10 @@ import personalWebsiteImage from "../assets/images/personalwebsite.png";
 import steamStatsImage from "../assets/images/mysteamstats.png";
 import currentlyPlayingImage from "../assets/images/currentlyplaying.png";
 import SectionContainer from "./SectionContainer";
-
-// const projects: ProjectProps[] =
+import { Project } from "./ProjectCard";
 
 interface ProjectsProps extends React.ComponentPropsWithRef<"div"> {
-  projects: ProjectProps[];
+  projects: Project[];
 }
 
 function Projects({ projects, ...rest }: ProjectsProps) {
