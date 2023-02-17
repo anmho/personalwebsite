@@ -52,14 +52,14 @@ function Experience() {
       }}
     >
       <div
-        className="flex justify-between align-center w-full text-left sm:flex-row flex-col"
+        className="flex justify-between align-center w-full text-left md:flex-row flex-col"
         ref={ref}
       >
         <div className="flex w-1/2 text-left flex-col">
-          <h1 className="text-5xl sm:text-7xl mb-8">Experience</h1>
+          <h1 className="text-5xl lg:text-7xl mb-8">Experience</h1>
         </div>
 
-        <div className="sm:w-1/2 h-full flex flex-col p-2 font-light">
+        <div className="md:w-1/2 h-full flex flex-col p-2 font-light">
           {experiences.map((exp, i) => (
             <ExperienceItem experience={exp} key={i} />
           ))}

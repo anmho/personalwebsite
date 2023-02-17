@@ -29,15 +29,15 @@ function Contact() {
       }}
     >
       <div
-        className="flex justify-between align-center w-full  text-left sm:flex-row flex-col"
+        className="flex justify-between align-center w-full  text-left md:flex-row flex-col"
         ref={ref}
       >
         <div className="flex w-1/2 text-left flex-col">
-          <h1 className="text-5xl sm:text-7xl mb-6">Contact</h1>
+          <h1 className="text-5xl md:text-7xl mb-6">Contact</h1>
           <p className="text-xl sm:text-2xl">andyminhtuanho@gmail.com</p>
         </div>
 
-        <div className="w-1/2 h-full flex flex-col sm:flex-row p-2 text-xl sm:text-2xl">
+        <div className="w-1/2 h-full flex flex-col sm:flex-row md:p-2 text-xl sm:text-2xl">
           <div className="w-1/2 h-full">
             <a href={githubUrl} target="_blank">
               <p>Github</p>
