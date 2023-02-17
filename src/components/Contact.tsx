@@ -5,68 +5,48 @@ import { FiExternalLink } from "react-icons/fi";
 import { BsGithub } from "react-icons/bs";
 import { BsLinkedin } from "react-icons/bs";
 import { SiGmail } from "react-icons/si";
+import { useRef } from "react";
+import { useInView } from "framer-motion";
 
 function Contact() {
   const githubUrl = "github.com/anmho";
   const linkedinUrl = "linkedin.com/in/andrewmnho";
   const gmail = "andyminhtuanho@gmail.com";
 
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true });
+
   return (
-    <SectionContainer id="contact" className="h-48 mt-64 mb-32">
-      <div className="w-full flex flex-col align-center">
-        <div className="flex-row flex justify-center align-center w-full h-12">
-          <div className="flex-row flex justify-between align-center bg-white w-3/4 h-fit p-4 rounded-md drop-shadow-xl">
-            <div className="flex flex-col justify-center align-center">
-              <h1
-                className="text-5xl -tracking-wider p-4 font-semibold
-            bg-gradient-to-r bg-clip-text text-transparent 
-            from-blue-500 via-purple-500 to-blue-500
-            animate-text mb-2 text-left"
-              >
-                Get in Touch
-              </h1>
-            </div>
+    <SectionContainer
+      id="contact"
+      className="mb-64"
+      style={{
+        transform: isInView ? "none" : "translateY(100px)",
+        opacity: isInView ? 1 : 0,
+        //cubic-bezier(.12,.8,.16,.99)
+        transition:
+          "transform 1s cubic-bezier(.33,.2,0,.9), opacity 0.5s cubic-bezier(.59,.08,.58,1)",
+      }}
+    >
+      <div
+        className="flex justify-between align-center w-full  text-left sm:flex-row flex-col"
+        ref={ref}
+      >
+        <div className="flex w-1/2 text-left flex-col">
+          <h1 className="text-5xl sm:text-7xl mb-6">Contact</h1>
+          <p className="text-xl sm:text-2xl">andyminhtuanho@gmail.com</p>
+        </div>
 
-            <div className="flex flex-col justify-center align-center w-fit">
-              <a
-                href={"https://github.com/anmho/resume/blob/main/main.pdf"}
-                target="_blank"
-              >
-                <div className="flex flex-col justify-center align-center w-64 bg-gray-100 p-4 rounded-lg">
-                  <div className="flex-row align-center justify-center flex">
-                    <h3 className="mr-2">My Resume</h3>
-                    <span className="flex justify-center align-center flex-col">
-                      <FiExternalLink size={20} />
-                    </span>
-                  </div>
-                </div>
-              </a>
-
-              <div className="flex flex-row align-center justify-evenly">
-                <a
-                  href={githubUrl}
-                  className="flex-grow mx-2 my-4 rounded-md outline-gray-300 outline p-2 align-center justify-center flex"
-                  target="_blank"
-                >
-                  <BsGithub size={20} />
-                </a>
-                <a
-                  href={linkedinUrl}
-                  className="flex-grow mx-2 my-4 rounded-md outline-gray-300 outline p-2  align-center justify-center flex"
-                  target="_blank"
-                >
-                  <BsLinkedin size={20} />
-                </a>
-                <a
-                  href={gmail}
-                  className="flex-grow mx-2 my-4 rounded-md outline-gray-300 outline p-2  align-center justify-center flex"
-                  target="_blank"
-                >
-                  <SiGmail size={20} />
-                </a>
-              </div>
-            </div>
+        <div className="w-1/2 h-full flex flex-col sm:flex-row p-2 text-xl sm:text-2xl">
+          <div className="w-1/2 h-full">
+            <a href={githubUrl} target="_blank">
+              <p>Github</p>
+            </a>
+            <a href={linkedinUrl} target="_blank">
+              <p>LinkedIn</p>
+            </a>
           </div>
+          <div className="w-1/2 h-full"></div>
         </div>
       </div>
     </SectionContainer>

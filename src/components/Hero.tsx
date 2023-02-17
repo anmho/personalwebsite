@@ -1,73 +1,49 @@
-import { FaLinkedin } from "react-icons/fa";
-import Navbar from "./Navbar";
-// import { IconContext, BsArrowDown, FaLinkedinIn } from "react-icons/bs";
-import { BsGithub, BsArrowDown } from "react-icons/bs";
-import { IoIosSchool } from "react-icons/io";
 import SectionContainer from "./SectionContainer";
+import { IoIosSchool } from "react-icons/io";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
 
-function InfoCard() {
+function Hero() {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true });
   return (
-    <div className="w-full h-full flex-col justify-center align-center hidden sm:flex">
-      <div className=" w-full h-1/2 rounded-lg"></div>
-    </div>
-  );
-}
-
-function HeroText() {
-  return (
-    <div className="w-full text-left flex flex-col align-center justify-center">
-      <div className="md:w-full w-full text-left text-gray-800 p-10">
-        <h1 className="md:text-6xl sm:text-4xl text-3xl">Hi! My name is</h1>
-        <div className="relative group w-fit mb-6">
-          <a target="_blank" href="https://www.linkedin.com/in/andrewmnho/">
-            <h1
-              className="sm:text-9xl font-semibold 
-            bg-gradient-to-r bg-clip-text text-transparent 
-            from-blue-500 via-purple-500 to-blue-500
-            animate-text text-6xl transition-transform  hover:-skew-x-6"
-            >
-              Andrew.
-            </h1>
-          </a>
-          <span className="bg-black w-0 group-hover:w-full group-hover:right-0 h-0.5 absolute left-0 bottom-0 transition-all duration-200" />
-        </div>
-        <div>
-          <div className="text-gray-800 flex flex-row align-center ">
-            <div className="w-5 h-5 rounded-full mr-1">
+    <SectionContainer>
+      <div
+        className="flex justify-between text-left py-20 mt-20 flex-col sm:flex-row"
+        ref={ref}
+        style={{
+          transform: isInView ? "none" : "translateY(100px)",
+          opacity: isInView ? 1 : 0,
+          //cubic-bezier(.12,.8,.16,.99)
+          transition:
+            "transform 1s cubic-bezier(.33,.2,0,.9), opacity 0.5s cubic-bezier(.59,.08,.58,1) 0.1s",
+        }}
+      >
+        <div className="sm:w-1/2  mb-8 sm:mb-0">
+          <h1 className="text-6xl sm:text-7xl xl:text-9xl flex-grow -tracking-wider">
+            Andrew
+          </h1>
+          <div className="text-gray-200 flex flex-row align-center pl-1">
+            <div className="w-5 h-5 rounded-full mr-2">
               <IoIosSchool size={20} />
             </div>
             <p>University of California, Irvine</p>
           </div>
-          <p className="md:text-xl mt-4 text-md">
-            I'm interested in cloud technology and working with data flows. I
-            love creating maintainable, reusable services that can benefit
-            anyone.
+        </div>
+
+        <div className="sm:w-1/2">
+          <p
+            className="text-md sm:text-xl 
+          md:text-2xl
+          text-gray-400 flex-grow 
+          sm:leading-8 md:leading-10 -tracking-wide font-light
+          
+          sm:ml-4"
+          >
+            I'm interested in cloud technology, working with data flows, and
+            creating maintainable, reusable services that can benefit anyone.
           </p>
         </div>
-      </div>
-    </div>
-  );
-}
-
-function Hero() {
-  return (
-    <SectionContainer
-      id="home"
-      className="h-screen flex flex-col items-center justify-center"
-    >
-      <div className="flex flex-col w-full h-full justify-center align-center sm:flex-row">
-        <HeroText />
-        <InfoCard />
-      </div>
-
-      <div className="flex flex-col items-center absolute bottom-0 mb-10">
-        <a
-          href="#body"
-          // className="mt-4 rounded-full p-2 transition-all duration-300 hover:-translate-y-2 hover:bg-gray-100"
-          className="text-white mt-4 rounded-full p-3 transition-all duration-300  bg-blue-500 hover:-translate-y-2 shadow-xl hover:bg-gray-600 cursor-pointer"
-        >
-          <BsArrowDown size={20}></BsArrowDown>
-        </a>
       </div>
     </SectionContainer>
   );
