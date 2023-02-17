@@ -1,3 +1,3 @@
 # personalwebsite
 
-You can visit my website at [https://andrewmho.netlify.app/](https://andrewmho.netlify.app/)
+You can visit my website at [https://andrewho.io/](https://andrewho.io)
