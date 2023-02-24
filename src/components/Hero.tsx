@@ -21,7 +21,7 @@ function Hero() {
       >
         <div className="sm:w-1/2  mb-8 sm:mb-0">
           <h1 className="text-6xl sm:text-7xl xl:text-9xl flex-grow -tracking-wider">
-            Andrew
+            Andrew Ho
           </h1>
           <div className="text-gray-200 flex flex-row align-center pl-1">
             <div className="w-5 h-5 rounded-full mr-2">

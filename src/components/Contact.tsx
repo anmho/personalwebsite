@@ -1,17 +1,17 @@
 // interface ContactProps P
-import Resume from "./Resume";
-import SectionContainer from "./SectionContainer";
-import { FiExternalLink } from "react-icons/fi";
-import { BsGithub } from "react-icons/bs";
-import { BsLinkedin } from "react-icons/bs";
-import { SiGmail } from "react-icons/si";
-import { useRef } from "react";
-import { useInView } from "framer-motion";
+import Resume from './Resume';
+import SectionContainer from './SectionContainer';
+import { FiExternalLink } from 'react-icons/fi';
+import { BsGithub } from 'react-icons/bs';
+import { BsLinkedin } from 'react-icons/bs';
+import { SiGmail } from 'react-icons/si';
+import { useRef } from 'react';
+import { useInView } from 'framer-motion';
 
 function Contact() {
-  const githubUrl = "github.com/anmho";
-  const linkedinUrl = "linkedin.com/in/andrewmnho";
-  const gmail = "andyminhtuanho@gmail.com";
+  const githubUrl = 'https://github.com/anmho';
+  const linkedinUrl = 'https://linkedin.com/in/andrewmnho';
+  const gmail = 'andyminhtuanho@gmail.com';
 
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true });
@@ -21,11 +21,11 @@ function Contact() {
       id="contact"
       className="mb-64"
       style={{
-        transform: isInView ? "none" : "translateY(100px)",
+        transform: isInView ? 'none' : 'translateY(100px)',
         opacity: isInView ? 1 : 0,
         //cubic-bezier(.12,.8,.16,.99)
         transition:
-          "transform 1s cubic-bezier(.33,.2,0,.9), opacity 0.5s cubic-bezier(.59,.08,.58,1)",
+          'transform 1s cubic-bezier(.33,.2,0,.9), opacity 0.5s cubic-bezier(.59,.08,.58,1)',
       }}
     >
       <div
