@@ -40,7 +40,7 @@ function Contact() {
         <div className="w-1/2 h-full flex flex-col sm:flex-row md:p-2 text-xl sm:text-2xl">
           <div className="w-1/2 h-full">
             <a href={githubUrl} target="_blank">
-              <p>Github</p>
+              <p>GitHub</p>
             </a>
             <a href={linkedinUrl} target="_blank">
               <p>LinkedIn</p>
