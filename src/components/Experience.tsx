@@ -1,41 +1,41 @@
 // interface ContactProps P
-import Resume from "./Resume";
-import SectionContainer from "./SectionContainer";
-import { FiExternalLink } from "react-icons/fi";
-import { BsGithub } from "react-icons/bs";
-import { BsLinkedin } from "react-icons/bs";
-import { SiGmail } from "react-icons/si";
-import { useRef } from "react";
-import { useInView } from "framer-motion";
+import Resume from './Resume';
+import SectionContainer from './SectionContainer';
+import { FiExternalLink } from 'react-icons/fi';
+import { BsGithub } from 'react-icons/bs';
+import { BsLinkedin } from 'react-icons/bs';
+import { SiGmail } from 'react-icons/si';
+import { useRef } from 'react';
+import { useInView } from 'framer-motion';
 
 /* Import as json */
 const experiences = [
   {
-    company: "Snap Inc.",
-    year: "2023",
-    title: "Software Engineer Intern",
-    location: "New York, NY",
+    company: 'Snap Inc.',
+    year: '2023',
+    title: 'Software Engineer Intern',
+    location: 'New York, NY',
   },
 
   {
-    company: "University of California, Irvine",
-    year: "2022",
-    title: "Web Developer",
-    location: "Irvine, CA",
+    company: 'University of California, Irvine',
+    year: '2022',
+    title: 'Web Developer',
+    location: 'Irvine, CA',
   },
 
   {
-    company: "Snap Engineering Academy",
-    year: "2022",
-    title: "Engineering Scholar",
-    location: "Santa Monica, CA",
+    company: 'Snap Engineering Academy',
+    year: '2022',
+    title: 'Engineering Scholar',
+    location: 'Santa Monica, CA',
   },
 ];
 
 function Experience() {
-  const githubUrl = "github.com/anmho";
-  const linkedinUrl = "linkedin.com/in/andrewmnho";
-  const gmail = "andyminhtuanho@gmail.com";
+  // const githubUrl = "github.com/anmho";
+  // const linkedinUrl = "linkedin.com/in/andrewmnho";
+  // const gmail = "andyminhtuanho@gmail.com";
 
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true });
@@ -45,21 +45,21 @@ function Experience() {
       id="contact"
       className="mb-40"
       style={{
-        transform: isInView ? "none" : "translateY(100px)",
+        transform: isInView ? 'none' : 'translateY(100px)',
         opacity: isInView ? 1 : 0,
         transition:
-          "transform 1s cubic-bezier(.33,.2,0,.9), opacity 0.5s cubic-bezier(.59,.08,.58,1)",
+          'transform 1s cubic-bezier(.33,.2,0,.9), opacity 0.5s cubic-bezier(.59,.08,.58,1)',
       }}
     >
       <div
-        className="flex justify-between align-center w-full text-left md:flex-row flex-col"
+        className="flex justify-between align-center w-full text-left md:flex-row flex-col "
         ref={ref}
       >
-        <div className="flex w-1/2 text-left flex-col">
-          <h1 className="text-5xl lg:text-7xl mb-8">Experience</h1>
+        <div className="w-1/2 text-left h-full">
+          <h1 className="text-5xl lg:text-7xl mb-8 sticky ">Experience</h1>
         </div>
 
-        <div className="md:w-1/2 h-full flex flex-col p-2 font-light">
+        <div className="md:w-1/2 flex flex-col p-2 font-light">
           {experiences.map((exp, i) => (
             <ExperienceItem experience={exp} key={i} />
           ))}
