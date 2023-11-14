@@ -22,15 +22,8 @@ function Hero() {
         <div>
           <div className="mb-8 sm:mb-0 ">
             <h1 className="sm:text-9xl text-7xl flex-grow -tracking-wider ">
-              {/* Andrew Ho */}
-              Crafting scalable, secure systems
+              Building scalable systems
             </h1>
-            {/* <div className="text-gray-200 flex flex-row align-center pl-1">
-            <div className="w-5 h-5 rounded-full mr-2">
-              <IoIosSchool size={20} />
-            </div>
-            <p>University of California, Irvine</p>
-          </div> */}
           </div>
 
           <div className="">
@@ -41,7 +34,8 @@ function Hero() {
           sm:leading-8 md:leading-10 -tracking-wide font-light
           sm:ml-4 "
             >
-              Hey, I'm Andrew Ho, a backend dev with a passion for cloud & ML
+              Hey, I'm Andrew Ho, a backend dev with a passion for high
+              performance data intensive systems.
             </p>
           </div>
         </div>

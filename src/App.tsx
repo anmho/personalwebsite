@@ -11,11 +11,7 @@ import Navbar from './components/Navbar';
 import Experience from './components/Experience';
 import Skills from './components/Skills';
 
-// pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
-
 function App() {
-  // use CMS
-
   return (
     <main className="w-full overflow-hidden scroll-pt-36 snap-y text-white">
       <Navbar />
