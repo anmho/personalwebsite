@@ -19,22 +19,23 @@ function Hero() {
         }}
       >
         <div>
-          <div className="mb-8 sm:mb-0 ">
-            <h1 className="sm:text-9xl text-7xl flex-grow -tracking-wider ">
-              Building reliable, scalable services
+          <div className="mb-8 sm:mb-0">
+            <h1 className="sm:text-9xl text-7xl flex-grow -tracking-wider leading-relaxed">
+              Building scalable services
             </h1>
           </div>
 
-          <div className="">
+          <div>
             <p
               className="text-md sm:text-xl 
           md:text-2xl
           text-gray-400 flex-grow 
           sm:leading-8 md:leading-10 -tracking-wide font-light
-          sm:ml-4 "
+          sm:ml-4"
             >
               Hey, I'm Andrew Ho, a backend dev with a passion for high
               performance data intensive systems.
+              <br></br>
             </p>
           </div>
         </div>
