@@ -1,7 +1,7 @@
-// interface ContactProps P
 import Resume from './Resume';
 import SectionContainer from './SectionContainer';
-import { FiExternalLink } from 'react-icons/fi';
+import { RxArrowTopRight } from 'react-icons/rx';
+
 import { BsGithub } from 'react-icons/bs';
 import { BsLinkedin } from 'react-icons/bs';
 import { SiGmail } from 'react-icons/si';
@@ -34,19 +34,32 @@ function Contact() {
       >
         <div className="flex w-1/2 text-left flex-col">
           <h1 className="text-5xl md:text-7xl mb-6">Contact</h1>
-          <p className="text-xl sm:text-2xl">andyminhtuanho@gmail.com</p>
+          <a className="flex items-center">
+            <p className="text-xl sm:text-2xl">andyminhtuanho@gmail.com</p>
+            <div className="aspect-square p-1 flex items-center justify-center">
+              <RxArrowTopRight size={26} className="font-extrabold" />
+            </div>
+          </a>
         </div>
 
         <div className="w-1/2 h-full flex flex-col sm:flex-row md:p-2 text-xl sm:text-2xl">
           <div className="w-1/2 h-full">
-            <a href={githubUrl} target="_blank">
+            <a
+              href={githubUrl}
+              target="_blank"
+              className="flex flex-row items-center"
+            >
               <p>GitHub</p>
             </a>
-            <a href={linkedinUrl} target="_blank">
+
+            <a
+              href={linkedinUrl}
+              target="_blank"
+              className="flex flex-row items-center"
+            >
               <p>LinkedIn</p>
             </a>
           </div>
-          <div className="w-1/2 h-full"></div>
         </div>
       </div>
     </SectionContainer>

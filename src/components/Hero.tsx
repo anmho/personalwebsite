@@ -9,12 +9,11 @@ function Hero() {
   return (
     <SectionContainer>
       <div
-        className="flex justify-between text-left py-20 mt-20 flex-col "
+        className="flex justify-between items-center text-left py-20 mt-20 flex-col h-fit"
         ref={ref}
         style={{
           transform: isInView ? 'none' : 'translateY(100px)',
           opacity: isInView ? 1 : 0,
-          //cubic-bezier(.12,.8,.16,.99)
           transition:
             'transform 1s cubic-bezier(.33,.2,0,.9), opacity 0.5s cubic-bezier(.59,.08,.58,1) 0.1s',
         }}
@@ -22,7 +21,7 @@ function Hero() {
         <div>
           <div className="mb-8 sm:mb-0 ">
             <h1 className="sm:text-9xl text-7xl flex-grow -tracking-wider ">
-              Building scalable systems
+              Building reliable, scalable services
             </h1>
           </div>
 

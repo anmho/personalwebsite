@@ -9,33 +9,50 @@ import { useRef } from 'react';
 import { useInView } from 'framer-motion';
 
 /* Import as json */
-const experiences = [
+const experiences: IExperience[] = [
+  {
+    company: 'Tesla',
+    year: 'Fall 2024',
+    title: 'Software Engineer Intern',
+    location: 'Los Angeles, CA',
+  },
   {
     company: 'Snap Inc.',
-    year: '2023',
+    year: 'Summer 2024',
     title: 'Software Engineer Intern',
-    location: 'New York, NY',
+    location: 'Los Angeles, CA',
   },
-
+  {
+    company: 'NASA',
+    year: 'Spring 2024',
+    title: 'Lucy Researcher',
+    location: 'Pasadena, CA',
+  },
+  {
+    company: 'Snap Inc.',
+    year: 'Spring 2023',
+    title: 'Software Engineer Intern',
+    location: 'Los Angeles, CA',
+  },
   {
     company: 'University of California, Irvine',
-    year: '2022',
+    year: '2022 - 2024',
     title: 'Web Developer',
     location: 'Irvine, CA',
   },
 
   {
-    company: 'Snap Engineering Academy',
-    year: '2022',
+    company: 'Snap Inc.',
+    year: 'Summer 2022',
     title: 'Engineering Scholar',
-    location: 'Santa Monica, CA',
+    location: 'Los Angeles, CA',
   },
 ];
 
 function Experience() {
-  // const githubUrl = "github.com/anmho";
-  // const linkedinUrl = "linkedin.com/in/andrewmnho";
-  // const gmail = "andyminhtuanho@gmail.com";
+  const githubUrl = 'github.com/anmho';
+  const linkedinUrl = 'linkedin.com/in/andrewmnho';
+  const gmail = 'andyminhtuanho@gmail.com';
 
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true });
@@ -63,8 +80,6 @@ function Experience() {
           {experiences.map((exp, i) => (
             <ExperienceItem experience={exp} key={i} />
           ))}
-          {/* <ExperienceItem />
-          <ExperienceItem /> */}
         </div>
       </div>
     </SectionContainer>
